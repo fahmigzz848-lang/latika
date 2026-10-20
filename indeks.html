@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemajaAI - Solusi Pintar Masa Kini</title>
+    <!-- Menggunakan Tailwind CSS untuk desain cepat dan modern -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        /* Efek custom untuk estetika teknologi */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-wider text-indigo-400">Teen<span class="text-white">AI</span></div>
+        <div class="space-x-6 text-sm hidden md:block">
+            <a href="#fitur" class="hover:text-indigo-400 transition">Fitur AI</a>
+            <a href="#harga" class="hover:text-indigo-400 transition">Harga</a>
+        </div>
+        <a href="#fitur" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-full transition shadow-lg shadow-indigo-600/30">Coba Gratis</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-screen">
+        <span class="bg-indigo-500/10 text-indigo-400 text-xs font-medium px-3 py-1 rounded-full border border-indigo-500/20 mb-4">Solusi Wirausaha Anak Muda v1.0</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Bikin Ide Konten Jualan <br><span class="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Otomatis Lewat AI</span>
+        </h1>
+        <p class="text-base md:text-lg text-slate-400 mb-8 max-w-xl">
+            Nggak usah pusing mikirin caption dan hashtag. Biarkan AI kami yang bekerja, kamu fokus hitung omset penjualan aja!
+        </p>
+        <a href="#fitur" class="bg-white text-slate-950 font-bold px-8 py-4 rounded-xl hover:bg-slate-200 transition-all transform hover:scale-105 shadow-xl">
+            Mulai Generator AI Sekarang
+        </a>
+    </header>
+
+    <!-- INTERACTIVE AI FEATURE SECTION -->
+    <section id="fitur" class="py-20 px-6 max-w-3xl mx-auto scroll-mt-20">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">Uji Coba Prototipe AI</h2>
+            <p class="text-sm text-slate-400">Masukkan nama produkmu dan lihat keajaibannya.</p>
+        </div>
+
+        <!-- Kotak Aplikasi AI (UX Form) -->
+        <div class="glass p-6 md:p-8 rounded-2xl shadow-2xl">
+            <div class="mb-5">
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Nama Produk / Jasa</label>
+                <input type="text" id="productName" placeholder="Contoh: Keripik Pisang Pedas Jombang" 
+                    class="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition text-sm">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Keunggulan Utama</label>
+                <input type="text" id="productBenefit" placeholder="Contoh: Menggunakan cabai asli, tanpa pengawet" 
+                    class="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition text-sm">
+            </div>
+
+            <button onclick="generateAI()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 text-sm cursor-pointer">
+                ✨ Generate Caption Jualan (AI)
+            </button>
+
+            <!-- Tempat Output Hasil AI -->
+            <div id="aiOutput" class="mt-8 pt-6 border-t border-slate-800/80 hidden">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Hasil Rekomendasi AI:</span>
+                    <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">Success</span>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl text-sm border border-slate-800 leading-relaxed text-slate-300" id="outputText">
+                    <!-- Text diisi via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION (POTENSI PENDAPATAN) -->
+    <section id="harga" class="py-20 px-6 max-w-4xl mx-auto border-t border-slate-900 scroll-mt-20">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">Mulai Langganan RemajaAI</h2>
+            <p class="text-sm text-slate-400">Akses fitur tanpa batas untuk ledakkan omset bisnismu.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <!-- Paket Free -->
+            <div class="glass p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-lg mb-1">Paket Nyoba</h3>
+                    <p class="text-xs text-slate-400 mb-4">Cocok untuk sekadar penasaran.</p>
+                    <div class="text-2xl font-black mb-4">Rp 0 <span class="text-xs font-normal text-slate-400">/ selamanya</span></div>
+                    <ul class="text-xs space-y-2 text-slate-300">
+                        <li>• 3x Generate caption/hari</li>
+                        <li>• Fitur AI standar</li>
+                    </ul>
+                </div>
+                <a href="#fitur" class="block text-center bg-slate-800 hover:bg-slate-700 text-xs font-semibold py-2.5 rounded-lg mt-6 transition">Pakai Gratis</a>
+            </div>
+
+            <!-- Paket Premium -->
+            <div class="glass p-6 rounded-2xl border-2 border-indigo-500 relative flex flex-col justify-between">
+                <span class="absolute -top-3 right-6 bg-indigo-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Populer</span>
+                <div>
+                    <h3 class="font-bold text-lg mb-1">Paket Juragan</h3>
+                    <p class="text-xs text-indigo-300 mb-4">Untuk wirausaha muda serius.</p>
+                    <div class="text-2xl font-black mb-4 text-indigo-400">Rp 15.000 <span class="text-xs font-normal text-slate-400">/ bulan</span></div>
+                    <ul class="text-xs space-y-2 text-slate-300">
+                        <li>• Unlimited Generate tanpa batas</li>
+                        <li>• Akses analisis tren pasar terkini</li>
+                        <li>• Support prioritas lewat WhatsApp</li>
+                    </ul>
+                </div>
+                <button onclick="alert('Terima kasih! Simulasi pembayaran Berhasil. Integrasikan API Payment Gateway di sini pada tahap produksi.')" 
+                    class="block text-center bg-indigo-600 hover:bg-indigo-500 text-xs font-bold py-2.5 rounded-lg mt-6 transition text-white cursor-pointer">
+                    Beli Paket Premium
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-xs text-slate-600 border-t border-slate-900">
+        <p>&copy; 2026 TeenAI. Dibuat dengan 💻 oleh Siswa SMA Wirausaha Kreatif.</p>
+    </footer>
+
+    <!-- LOGIC JAVASCRIPT (SIMULASI AI) -->
+    <script>
+        function generateAI() {
+            const product = document.getElementById('productName').value.trim();
+            const benefit = document.getElementById('productBenefit').value.trim();
+            const outputDiv = document.getElementById('aiOutput');
+            const outputText = document.getElementById('outputText');
+
+            if (product === "" || benefit === "") {
+                alert("Tolong isi semua kolom dulu ya agar AI bisa berpikir! 💡");
+                return;
+            }
+
+            // Simulasi loading AI
+            outputText.innerHTML = "<em>Sedang memikirkan strategi terbaik... 🤖</em>";
+            outputDiv.classList.remove('hidden');
+
+            setTimeout(() => {
+                // Formula logika copywriting lokal (Simulasi AI)
+                const hasilCaption = `🔥 <strong>SIAP-SIAP BANJIR ORDERAN!</strong> 🔥<br><br>` +
+                    `Lagi bingung cari solusi? Kenalin nih <strong>${product}</strong>! ` +
+                    `Produk ini dibuat khusus buat kamu karena punya keunggulan nyata: 🌟 <em>${benefit}</em>.<br><br>` +
+                    `Jangan sampai kehabisan, yuk order sekarang juga lewat link di bio kami! ✨<br><br>` +
+                    `#${product.replace(/\s+/g, '')} #WirausahaMuda #BisnisAnakMuda #AI`;
+
+                outputText.innerHTML = hasilCaption;
+            }, 1000); // efek jeda 1 detik seolah olah AI sedang berpikir
+        }
+    </script>
+</body>
+</html>
